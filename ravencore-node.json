@@ -1,0 +1,30 @@
+{
+  "network": "livenet",
+  "port": 3001,
+  "services": [
+    "ravend",
+    "web",
+    "insight-api"
+  ],
+  "messageLog": "",
+  "servicesConfig": {
+    "insight-api": {
+      "routePrefix": "api",
+      "coinTicker": "https://api.coinmarketcap.com/v1/ticker/ravencoin/?convert=USD",
+      "coinShort": "RVN",
+      "db": {
+        "host": "mongo",
+        "port": "27017",
+        "database": "raven-api-livenet",
+        "user": "raven",
+        "password": "thebirdistheword"
+      }
+    },
+    "ravend": {
+      "spawn": {
+        "datadir": "./data",
+        "exec": "/usr/src/app/ravencore-node/bin/ravend"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+version: '3'
+services:
+    raven:
+      depends_on:
+        - mongo
+      build: .
+      image: ravencore
+      ports:
+        - 8766:8766
+        - 3001:3001
+    mongo:
+      image: mongo:latest
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+      ports:
+        - 27017:27017
+      volumes:
+        - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
