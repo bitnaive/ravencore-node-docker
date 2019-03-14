@@ -9,6 +9,9 @@
   "messageLog": "",
   "servicesConfig": {
     "insight-api": {
+      "rateLimiterOptions": {
+        "whitelist": ["::ffff:127.0.0.1"]
+      },
       "routePrefix": "api",
       "coinTicker": "https://api.coinmarketcap.com/v1/ticker/ravencoin/?convert=USD",
       "coinShort": "RVN",
