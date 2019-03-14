@@ -1,5 +1,5 @@
 # ravencode-node-docker
 
-Run insights-api available at localhost:300
+Run insights-api available at localhost:3001
 
-`docker-compuse up -d`
+`docker-compose up -d`
